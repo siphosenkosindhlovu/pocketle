@@ -1,0 +1,39 @@
+.t-navbar {
+  z-index: 1;
+  @apply flex flex-col px-5 h-nav-sm border-gray-200 border-solid border-b inset-x-0 top-0;
+
+  &_inner {
+    @apply flex items-center h-full justify-between font-sans-alt font-semibold;
+  }
+  &_trigger {
+    @apply pr-5 text-2xl font-bold;
+  }
+  &_logo {
+    @apply w-12 mr-auto;
+  }
+  &_menu-right {
+    @apply flex flex-row-reverse text-sm;
+  }
+}
+
+@screen sm {
+  .t-navbar {
+    @apply h-nav-md px-3lg pt-sm;
+  }
+}
+
+@screen md {
+  .t-navbar {
+    &_logo {
+      @apply w-32;
+    }
+  }
+}
+body {
+  padding-top: 105px;
+}
+@screen md {
+  body {
+    padding-top: 130px;
+  }
+}

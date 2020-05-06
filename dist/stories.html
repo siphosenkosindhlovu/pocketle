@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"-->
+<script src="assets/js/jquery.min.js"></script>
+<script src="https://unpkg.com/popper.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/main.min.css"/>
+    <title>Press</title>
+  </head>
+  <body>
+    <input id="mobile-menu" type="checkbox" style="display: none"/>
+    <div class="menu-wrapper-mobile">
+      <div class="nav-menu">
+        <div class="nav-menu-item">
+          LANGUAGE:
+            <a href="story.html">日本語</a>
+            <a href="story.en.html">ENG</a>
+        </div>
+      </div>
+      
+    </div>
+    <div class="overlay"></div>
+    <div class="nav-header">
+      <div class="nav-logo">
+      <a href="index.html">
+        <div class="logo"></div>
+      </a>
+      </div>
+      <i class="fa fa-menu"></i>
+      <div class="menu-wrapper">
+        <div class="nav-menu">
+          <!--
+            <a class="nav-menu-item active" href="#">Coming Soon</a>
+            <a class="nav-menu-item" href="#">Coming Soon</a>
+            <a class="nav-menu-item" href="#">Coming Soon</a>
+            <a class="nav-menu-item" href="#">Coming Soon</a>
+            <a class="nav-menu-item" href="#">Coming Soon</a>
+            <a class="nav-menu-item" href="#">Coming Soon</a>
+            <a class="nav-menu-item" href="#"><i class="fa fa-search"></i></a>-->
+          <div class="nav-menu-item justify-right">
+            <div class="dropdown">
+              <label for="language-dropdown-1" class="dropdown-label">LANGUAGE<span
+                  class="icon icon-sm icon-chevron-down"></span></label>
+              <input type="checkbox" id="language-dropdown-1" />
+              <ul class="dropdown-list">
+                <li><a href="story.html">日本語</a></li>
+                <li><a href="story.en.html">ENGLISH</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <nav class="user-menu justify-right justify-content-between">
+          <div class="menu-left">
+            <label for="mobile-menu" class="user-menu-item"><i class="fa fa-bars fa-lg"></i></label>
+          </div>
+          <div class="menu-right">
+            <a href="#" class="user-menu-item sign-in">SIGN IN</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="sub-menu t-font-sans">
+      <input class="sub-menu__dropdown-controller" id="submenu" type="checkbox"/>
+      <label class="sub-menu__dropdown" for="submenu">ABOUT US</label>
+      <div class="sub-menu__wrapper"><a class="sub-menu__link sub-menu__link--selected" href="plans.html">STORY</a><a class="sub-menu__link" href="about-us.html">VISION</a><a class="sub-menu__link" href="product.html">PRODUCT</a><a class="sub-menu__link" href="process.html">PROCESS</a><a class="sub-menu__link" href="careers.html">CAREERS</a><a class="sub-menu__link" href="notes.html">NOTES FROM</a></div>
+    </div>
+    <footer class="t-border-t t-border-solid t-border-gray-300 t-py-5 t-bg-gray-100">
+      <div class="text-container text-center">&copy; 2020 Pocketle. All Rights Reserved.</div>
+    </footer>
+  </body>
+</html>

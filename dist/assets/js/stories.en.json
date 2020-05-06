@@ -1,0 +1,117 @@
+[
+  {
+    "heading": "How this works",
+    "picture": {
+      "src": "assets/images/shutterstock_1114626449.jpg",
+      "altText": "Image description for assistive technologies"
+    },
+    "date": "2014",
+    "body": [
+      "Stories are stored as entried in JSON files in \"assets/js/stories.en.json\" and\"assets/js/stories.en.json\" for Japanese",
+      "They are loaded via ajax, but due to browser security limitation the will only load when running on a server since they are an AJAX call"
+    ]
+  },
+  {
+    "heading": "These are stored a JSON File",
+    "picture": {
+      "src": "assets/images/shutterstock_1114626449.jpg",
+      "altText": "Image desctiption for assistive technologies"
+    },
+    "date": 2019,
+    "body": [
+      "Paragraphs are separated by commas within the square brackets",
+      "Example: ",
+      "Paraprah 1",
+      "Paragraph2",
+      "paragraph3"
+    ]
+  },
+  {
+    "heading": "Irure qui commodo dolor dolore officia reprehenderit laboris excepteur veniam ex.",
+    "picture": {
+      "src": "assets/images/shutterstock_1114626449.jpg",
+      "altText": "Image desctiption for assistive technologies"
+    },
+    "date": 2019,
+    "body": ["All text must have double quotes around it"]
+  },
+  {
+    "heading": "Amet eu elit laborum non irure velit.",
+    "picture": {
+      "src": "assets/images/shutterstock_1114626449.jpg",
+      "altText": "Image desctiption for assistive technologies"
+    },
+    "date": 2018,
+    "body": [
+      "Qui pariatur quis pariatur veniam velit Lorem Lorem amet. Commodo dolore consectetur magna dolor est aliqua consectetur duis. Laboris consectetur aliquip id ad tempor id eiusmod fugiat. Esse ea qui fugiat ea consequat sit dolor proident dolore culpa elit. Lorem labore voluptate ipsum officia sint ullamco Lorem sint excepteur dolore veniam. Sit est sint nostrud ad exercitation."
+    ]
+  },
+  {
+    "heading": "Et ea laborum eiusmod ut reprehenderit.",
+    "picture": {
+      "src": "assets/images/shutterstock_1114626449.jpg",
+      "altText": "Image desctiption for assistive technologies"
+    },
+    "date": 2018,
+    "body": [
+      "Minim ad velit adipisicing pariatur aliqua laboris qui duis quis velit ea qui. Duis cupidatat commodo proident sit sit incididunt ea tempor irure aliqua. Elit anim commodo deserunt amet minim tempor nulla sunt ex ex mollit. Adipisicing anim commodo ipsum dolore velit minim reprehenderit id enim pariatur. Duis fugiat consectetur proident ipsum tempor do. Adipisicing nulla non ex excepteur Lorem."
+    ]
+  },
+  {
+    "heading": "Do esse tempor tempor non non.",
+    "picture": {
+      "src": "assets/images/shutterstock_1114626449.jpg",
+      "altText": "Image desctiption for assistive technologies"
+    },
+    "date": 2018,
+    "body": [
+      "Labore aute in cillum adipisicing pariatur Lorem dolore pariatur proident cillum. Occaecat ullamco minim deserunt laboris deserunt magna cillum ad cupidatat ipsum. Occaecat elit incididunt voluptate id id ea cillum elit sint mollit ipsum. Velit non ex consequat cillum cupidatat laborum. Adipisicing consectetur culpa ipsum duis labore."
+    ]
+  },
+  {
+    "heading": "Sint officia ipsum dolore esse sunt in qui non fugiat in mollit magna.",
+    "picture": {
+      "src": "assets/images/shutterstock_1114626449.jpg",
+      "altText": "Image desctiption for assistive technologies"
+    },
+    "date": 2019,
+    "body": [
+      "Velit voluptate dolore labore nostrud reprehenderit. Dolor qui nisi sit eu minim et. Ex ea elit nostrud occaecat elit amet consectetur adipisicing elit mollit nostrud. Veniam magna reprehenderit velit sunt est officia mollit officia. Reprehenderit velit quis enim voluptate culpa laboris ad adipisicing mollit aliqua magna dolor. Culpa enim et sunt enim ut mollit nisi officia sunt. Laboris nulla duis excepteur veniam cillum.",
+      "Aute exercitation mollit deserunt mollit aliqua est voluptate esse. Excepteur consequat consequat id ipsum irure pariatur ullamco in. Consequat magna nostrud sit ad do cillum minim magna aliquip cupidatat laborum esse consequat. Occaecat pariatur occaecat proident excepteur duis esse qui ipsum. Ea mollit voluptate proident occaecat anim officia. Incididunt dolore veniam nostrud deserunt tempor ex velit proident eu fugiat mollit commodo aliqua. Magna commodo enim cupidatat esse nulla deserunt incididunt proident Lorem aliqua in."
+    ]
+  },
+  {
+    "heading": "Fugiat enim culpa duis velit.",
+    "picture": {
+      "src": "assets/images/shutterstock_1114626449.jpg",
+      "altText": "Image desctiption for assistive technologies"
+    },
+    "date": 2014,
+    "body": [
+      "Lorem minim reprehenderit pariatur consectetur adipisicing consequat qui. Eiusmod duis deserunt anim ullamco sunt adipisicing qui minim nisi. Veniam nostrud eu eiusmod ex officia ea id minim commodo mollit duis. Et sunt magna et amet aliquip ipsum eu occaecat. Ipsum ipsum id incididunt esse cupidatat eiusmod occaecat excepteur qui sit commodo nisi elit. Est eu ea irure est ullamco proident est pariatur esse amet cupidatat laborum voluptate."
+    ]
+  },
+  {
+    "heading": "Minim ut reprehenderit in sunt officia veniam magna.",
+    "picture": {
+      "src": "assets/images/shutterstock_1114626449.jpg",
+      "altText": "Image desctiption for assistive technologies"
+    },
+    "date": 2018,
+    "body": [
+      "Elit dolor ipsum amet commodo ex minim incididunt ad. Pariatur ad Lorem ea tempor qui mollit quis duis elit nostrud. Aute sint excepteur mollit culpa non. Eu fugiat cillum mollit Lorem aliquip consectetur ex exercitation Lorem.",
+      "Ad irure deserunt magna enim et Lorem officia sint est. Enim non tempor excepteur elit ullamco. Aute ea ullamco ad nisi voluptate anim et. Do aute enim labore ullamco amet anim minim eiusmod aliqua ea reprehenderit. Ipsum cillum id incididunt elit deserunt est consequat quis sunt in tempor deserunt."
+    ]
+  },
+  {
+    "heading": "Est irure qui officia non in magna ex sit est eiusmod.",
+    "picture": {
+      "src": "assets/images/shutterstock_1114626449.jpg",
+      "altText": "Image desctiption for assistive technologies"
+    },
+    "date": 2019,
+    "body": [
+      "Ut velit do culpa Lorem anim irure non pariatur cupidatat adipisicing sint quis minim. Laborum veniam commodo excepteur dolore veniam qui magna ipsum non eiusmod veniam. Aliqua commodo commodo do tempor quis commodo et aliqua. Laborum culpa velit esse fugiat nulla enim veniam dolore."
+    ]
+  }
+]

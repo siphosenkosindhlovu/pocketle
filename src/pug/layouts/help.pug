@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+block variables
+html(lang=($t.locale))
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://unpkg.com/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    link(rel="stylesheet", type="text/css" href="assets/main.min.css")
+    title= title
+    style.
+      html {
+        font-size: 16px;
+        font-family: "ProximaNova", san-serif;
+      }
+      @media(min-width: 768px){
+        html{
+          font-size: 16px
+        }
+      }
+  body
+    input#mobile-menu(type="checkbox" style="display: none")
+    .menu-wrapper-mobile.
+      <div class="nav-menu">
+        <div class="nav-menu-item">
+          LANGUAGE:
+            <a href="#{page}.html">日本語</a>
+            <a href="#{page}.en.html">ENG</a>
+        </div>
+      </div>
+    
+    .overlay
+    .nav-header.
+      <div class="menu-left">
+        <label for="mobile-menu" class="user-menu-item"><i class="fa fa-bars fa-lg"></i></label>
+      </div>
+      <div class="nav-logo">
+        <a href="#{('index'+ ($t.locale == 'en' ? '.en' : '') +'.html')}">
+          <div class="logo"></div>
+        </a>
+      </div>
+      <div class="menu-wrapper">
+        <div class="nav-menu">
+          <div class="nav-menu-item justify-right">
+            <div class="dropdown">
+              <label for="language-dropdown-1" class="dropdown-label">LANGUAGE<span
+                  class="icon icon-sm icon-chevron-down"></span></label>
+              <input type="checkbox" id="language-dropdown-1" />
+              <ul class="dropdown-list">
+                <li><a href="#{page}.html">日本語</a></li>
+                <li><a href="#{page}.en.html">ENGLISH</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <nav class="t-flex t-items-center t-ml-auto">
+            <a href="#" class="user-menu-item sign-in t-font-bold">HELP CENTER</a>
+            <span class="t-hidden sm:t-block">|</span>
+            <a href="#" class="user-menu-item sign-in t-hidden sm:t-block">BACK TO MAIN PAGE</a>
+        </nav>
+      </div>
+    //- div.t-navbar(class="t-fixed t-w-full t-bg-white t-h-nav-sm")
+    //-   nav.t-navbar_inner
+    //-     button.t-navbar_trigger(class="lg:t-hidden") &#x2630;
+    //-     a.t-navbar_logo(href=("index"+ ($t.locale == 'en' ? '.en' : '') +".html"), class="md:t-w-32")
+    //-       img(class="md:t-hidden", src="assets/images/logo app icon.png")
+    //-       img(class="t-hidden md:t-block", src="assets/images/Pocketle.png")
+    //-     nav.t-navbar_menu-right
+    //-       a.t-ml-4(href="#") Sign In
+    //-       a.t-ml-1(href=(page + ".en.html"), class=($t.locale == 'en' && 't-border-b t-border-solid t-border-gray-700')) EN
+    //-       a.t-ml-1(href=(page + ".html"), class=($t.locale == 'jp' && 't-border-b t-border-solid t-border-gray-700')) JP
+
+
+    block content
+    block footer
+      footer.t-border-t.t-border-solid.t-border-gray-300.t-py-5.t-bg-gray-100
+        .text-container.text-center
+          | &copy; 2020 Pocketle. All Rights Reserved.

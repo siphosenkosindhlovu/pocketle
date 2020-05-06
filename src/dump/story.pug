@@ -1,0 +1,93 @@
+extends layouts/default
+block variables
+  - var title = "Plans"
+  - var page ="plans"
+block content
+  main.maincontainer.
+    <div class="about-us our-plans">
+      <div class="about-us__header plans-header">
+        <div class="head">
+          <h1>!{$t.pages.story.heading}</h1>
+          <div class="separator"></div>
+        </div>
+        <p>
+          !{$t.pages.story.sub_heading}
+        </p>
+      </div>
+      <div class="our-plans__start"></div>
+      <div class="our-plans__segment our-plans__segment--right">
+        <div class="our-plans__image">
+          <div class="our-plans__image-container">
+            <img src="assets/images/harvardextentionschool.png" />
+          </div>
+        </div>
+
+        <div class="our-plans__text">
+          <div class="our-plans__date">2017-2018</div>
+          <div class="our-plans__image">
+            <div class="our-plans__image-container">
+              <img src="assets/images/Attachment_1554210685.jpeg" />
+            </div>
+          </div>
+          <div class="head">
+            <h2>!{$t.pages.story.sections[0].heading}</h2>
+          </div>
+          <div class="deck">
+            !{$t.pages.story.sections[0].content}
+          </div>
+        </div>
+      </div>
+      <div class="our-plans__segment our-plans__segment--left">
+        <div class="our-plans__image">
+          <div class="our-plans__image-container">
+            <img src="assets/images/Kyotofujoseikigyoukasho.jpeg" />
+          </div>
+        </div>
+
+        <div class="our-plans__text">
+          <div class="our-plans__date">2018-2019</div>
+          <div class="our-plans__image">
+            <div class="our-plans__image-container">
+              <img src="assets/images/shutterstock_1114626449.jpg" />
+            </div>
+          </div>
+          <div class="head">
+            <h2>!{$t.pages.story.sections[1].heading}</h2>
+          </div>
+          <div class="deck">
+            !{$t.pages.story.sections[1].content}
+          </div>
+        </div>
+      </div>
+      <div class="our-plans__segment our-plans__segment--right">
+        <div class="our-plans__image">
+          <div class="our-plans__image-container">
+            <img src="assets/images/shutterstock_1114626449.jpg" />
+          </div>
+        </div>
+
+        <div class="our-plans__text">
+          <div class="our-plans__date">2019</div>
+          <div class="our-plans__image">
+            <div class="our-plans__image-container">
+              <img src="assets/images/shutterstock_1114626449.jpg" />
+            </div>
+          </div>
+          <div class="head">
+            <h2>Coming Soon</h2>
+          </div>
+          <div class="deck">
+            <p>
+
+            </p>
+            <p>
+
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="our-plans__end"></div>
+    </div>
+    <br />
+    <br />
+    <br />

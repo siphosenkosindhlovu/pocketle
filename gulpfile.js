@@ -10,7 +10,8 @@ var settings = {
 	styles: true,
 	svgs: true,
 	copy: true,
-	reload: true
+	reload: true,
+	pug: true
 };
 
 
@@ -28,7 +29,12 @@ var paths = {
 	},
 	styles: {
 		input: 'src/sass/**/*.{scss,sass}',
-		output: 'dist/css/'
+		css: 'src/sass/*.css',
+		output: 'dist/assets/'
+	},
+	pug: {
+		input: ['src/pug/*.pug', '!src/pug/layout/**'], //only compile top level pug files
+		output: 'dist/'
 	},
 	svgs: {
 		input: 'src/svg/*.svg',
@@ -62,7 +68,7 @@ var banner = {
  */
 
 // General
-var {gulp, src, dest, watch, series, parallel} = require('gulp');
+var { gulp, src, dest, watch, series, parallel } = require('gulp');
 var del = require('del');
 var flatmap = require('gulp-flatmap');
 var lazypipe = require('lazypipe');
@@ -80,8 +86,23 @@ var optimizejs = require('gulp-optimize-js');
 // Styles
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
+var precss = require('precss');
 var prefix = require('autoprefixer');
 var minify = require('cssnano');
+var tailwindcss = require('tailwindcss');
+var importCss = require('postcss-import');
+var concat = require('gulp-concat');
+var purge = require('gulp-purgecss')
+var purgecss = require('@fullhuman/postcss-purgecss')({
+
+	// Specify the paths to all of the template files in your project 
+	content: [
+		'./src/**/*.pug',
+	],
+
+	// Include any special characters you're using in this regular expression
+	defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+})
 
 // SVGs
 var svgmin = require('gulp-svgmin');
@@ -89,7 +110,8 @@ var svgmin = require('gulp-svgmin');
 // BrowserSync
 var browserSync = require('browser-sync');
 
-
+var pug = require('gulp-pug')
+var pugI18n = require('gulp-pug-i18n')
 /**
  * Gulp Tasks
  */
@@ -112,13 +134,13 @@ var cleanDist = function (done) {
 
 // Repeated JavaScript tasks
 var jsTasks = lazypipe()
-	.pipe(header, banner.main, {package: package})
+	.pipe(header, banner.main, { package: package })
 	.pipe(optimizejs)
 	.pipe(dest, paths.scripts.output)
-	.pipe(rename, {suffix: '.min'})
+	.pipe(rename, { suffix: '.min' })
 	.pipe(uglify)
 	.pipe(optimizejs)
-	.pipe(header, banner.main, {package: package})
+	.pipe(header, banner.main, { package: package })
 	.pipe(dest, paths.scripts.output);
 
 // Lint, minify, and concatenate scripts
@@ -129,7 +151,7 @@ var buildScripts = function (done) {
 
 	// Run tasks on script files
 	return src(paths.scripts.input)
-		.pipe(flatmap(function(stream, file) {
+		.pipe(flatmap(function (stream, file) {
 
 			// If the file is a directory
 			if (file.isDirectory()) {
@@ -192,15 +214,30 @@ var buildStyles = function (done) {
 			outputStyle: 'expanded',
 			sourceComments: true
 		}))
+		.pipe(src(paths.styles.css))
 		.pipe(postcss([
+			importCss({
+				path: 'src/sass/'
+			}),
+			precss(),
+			tailwindcss,
 			prefix({
 				cascade: true,
 				remove: true
 			})
 		]))
-		.pipe(header(banner.main, {package: package}))
+		.pipe(header(banner.main, { package: package }))
+		.pipe(concat('main.css'))
+		// .pipe(purge({
+		// 	content: [
+		// 		'./src/**/*.pug',
+		// 		'./src/copy/**/*.html'
+		// 	],
+		// 	// Include any special characters you're using in this regular expression
+		// 	defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+		// }))
 		.pipe(dest(paths.styles.output))
-		.pipe(rename({suffix: '.min'}))
+		.pipe(rename({ suffix: '.min' }))
 		.pipe(postcss([
 			minify({
 				discardComments: {
@@ -212,6 +249,23 @@ var buildStyles = function (done) {
 
 };
 
+var buildHTML = function (done) {
+
+	if (!settings.pug) return done()
+
+	return src(paths.pug.input)
+		.pipe(pugI18n({
+			i18n: {
+				locales: 'locales/*.{yml,json}',
+				default: 'jp',
+				namespace: '$t',
+				filename: '{{basename}}{.{{lang}}}.html'
+			},
+			pretty: true
+		}))
+		.pipe(dest(paths.pug.output))
+
+}
 // Optimize SVG files
 var buildSVGs = function (done) {
 
@@ -264,9 +318,14 @@ var reloadBrowser = function (done) {
 
 // Watch for changes
 var watchSource = function (done) {
-	watch(paths.input, series(exports.default, reloadBrowser));
+	watch([paths.input, `!${paths.styles.input}`], series(exports.develop, reloadBrowser));
 	done();
 };
+
+var watchStyles = (done) => {
+	watch([paths.styles.css, paths.styles.input], series(buildStyles, reloadBrowser));
+	done()
+}
 
 
 /**
@@ -282,8 +341,17 @@ exports.default = series(
 		lintScripts,
 		buildStyles,
 		buildSVGs,
+		buildHTML,
 		copyFiles
 	)
+);
+
+exports.develop = parallel(
+	buildScripts,
+	lintScripts,
+	buildSVGs,
+	buildHTML,
+	copyFiles
 );
 
 // Watch and reload
@@ -293,3 +361,5 @@ exports.watch = series(
 	startServer,
 	watchSource
 );
+
+exports.watchStyles = watchStyles

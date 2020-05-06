@@ -1,0 +1,80 @@
+@font-face {
+  font-family: Genath;
+  src: url('fonts/Genath-Regular.woff');
+}
+@font-face {
+  font-family: Genath;
+  src: url('fonts/Genath-RegularIta.otf');
+  font-style: italic;
+}
+@font-face {
+  font-family: Genath-Regular;
+  src: url('fonts/Genath-Regular.woff');
+}
+@font-face {
+  font-family: Engravers;
+  src: url('fonts/Engravers.woff');
+}
+@font-face {
+  font-family: Engravers Gothic BT;
+  src: url('fonts/Engravers.woff');
+}
+@font-face {
+  font-family: 'ProximaNova-Regular';
+  font-weight: 400;
+  src: url('fonts/ProximaNova-Regular.otf');
+}
+@font-face {
+  font-family: 'ProximaNova';
+  font-weight: 400;
+  src: url('fonts/ProximaNova-Regular.otf');
+}
+@font-face {
+  font-family: 'ProximaNova-Bold';
+  font-weight: bold;
+  src: url('fonts/ProximaNova-Bold.otf');
+}
+@font-face {
+  font-family: 'ProximaNova';
+  font-weight: bold;
+  src: url('fonts/ProximaNova-Bold.otf');
+}
+@font-face {
+  font-family: 'ProximaNova-Semibold';
+  font-weight: 600;
+  src: url('fonts/ProximaNova-Semibold.otf');
+}
+@font-face {
+  font-family: 'ProximaNova';
+  font-weight: 600;
+  src: url('fonts/ProximaNova-Semibold.otf');
+}
+
+:root {
+  --font-primary: 'Genath', serif;
+  --font-secondary: 'Engravers', sans-serif;
+  --font-tertiary: 'ProximaNova', sans-serif;
+  --font-monospace: monospace;
+}
+
+body {
+  @apply font-serif;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 300;
+  padding-top: 150px;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+h1 {
+  @apply text-5xl;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}

@@ -1,0 +1,23 @@
+{
+  "locale": "en",
+  "pages": {
+    "home": {
+      "hero_main": "“We are creating it....”",
+      "hero_sub": "We are creating a revolutionary ecommerce that we wish we had. We will be back momentarily",
+      "hero_cta": "GET NEWs ABOUT POCKETLE",
+      "newsletter": {
+        "header": "Subsribe to Our News"
+      }
+    },
+    "story": {
+      "heading": "Our Story",
+      "sub_heading": "Pocketle was founded in 2019. <br /> And Here is how the story began.",
+      "sections": [
+        {
+          "heading": "The 'aha' moment",
+          "content": ""
+        }
+      ]
+    }
+  }
+}

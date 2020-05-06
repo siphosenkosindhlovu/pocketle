@@ -1,0 +1,19 @@
+extends layouts/default
+block variables
+  - var title = "Our Vision"
+  - var page ="about-us"
+block content
+  main.maincontainer.
+    <div class="about-us__header">
+      <div class="head">
+        <h1>Our Vision</h1>
+        <div class="separator"></div>
+      </div>
+      <div class="about-us__introduction">
+        <h2 class="text-left">
+          !{$t.pages.vision.sub_heading}
+        </h2>
+        <img src="assets/images/attachment_a6c69264f0367a6786443ceac256afc1.jpg" />
+      </div>
+    </div>
+    !{$t.pages.vision.content}

@@ -1,0 +1,95 @@
+extends layouts/default
+block variables
+  - var title = "A dig bick"
+  - var page ="nycstore"
+block content
+  div(role="banner")
+    figure
+      img.t-w-full(src="assets/images/image-asset.jpeg")
+  .text-container.t-py-0.t-mx-auto.t-text-center(class="sm:t-w-2/3 lg:t-w-2/4")
+    h1.t-text-5xl.t-leading-tight &nbsp; 
+    h1 NYC Flagship 
+      br 
+      em Temporarily Closed
+    p &nbsp;
+    p.
+      As of 3/16, we have temporarily closed our Kyoto flagship to help mitigate the spread of COVID-19. We are so sorry for the inconvenience. For details about renting and returning rentals, see 
+      <a href="#">Here</a>.
+    
+    p &nbsp;
+    p &nbsp;
+    p &nbsp;
+  section
+    .t-grid(class="lg:t-grid-cols-3")
+      div.text-container
+        h3 STORE ADDRESS
+        p &nbsp;
+        p 30 W. 15th Street
+          br
+          | Kyoto
+        p &nbsp;
+        a(href="#") View on map          
+      div.text-container
+        h3 Store Hours
+        p &nbsp;
+        p Temporarily Closed
+      div.text-container.adjusting-width
+        h3 Contact
+        p &nbsp;
+        p Contact our customer service team for questions about the store, your order,
+        p or any other questions about
+        p Pocketle.  
+        p &nbsp;
+        p Call: 
+        p Email: 
+  section
+    .text-container.t-py-0.t-mx-auto.text-center(class="sm:t-w-2/3 lg:t-w-2/4")
+      p &nbsp;
+      h1 In-Store Services
+      p &nbsp;
+    .t-grid(class="lg:t-grid-cols-3")
+      .text-container.adjusting-width
+        figure 
+          img.t-py-4.t-mx-auto(src="assets/images/image-asset.png")
+        h2 Return
+        h2 Your Order
+        p &nbsp;
+        p.
+          <strong>RTR Unlimited members</strong> and <strong>RTR Reserve customers</strong>
+        p can immediately return their order.
+        p &nbsp;
+        a(href="#") LEARN MORE
+      .text-container.adjusting-width
+        figure 
+          img.t-py-4.t-mx-auto(src="assets/images/image-asset (1).png")
+        h2 Find Your
+        h2 Next Item
+        p &nbsp;
+        p RTR Unlimited members can pick their next piece on the spot and walk out with something new. 
+        p All guests can browse and try on everything in-store to rent same-day, or reserve for a future date.
+        p &nbsp;
+        a(href="#") LEARN MORE
+      .text-container.adjusting-width
+        figure 
+          img.t-py-4.t-mx-auto(src="assets/images/image-asset (2).png")
+        h2 Pick Up
+        h2 Your Order
+        p &nbsp;
+        p RTR Unlimited members and RTR Reserve customers can ship their order to the store and pick up.
+        p &nbsp;
+        a(href="#") LEARN MORE
+  section
+    .text-container.adjusting-width
+      h2 &nbsp;
+      h2 Book an Appointment
+      p &nbsp;
+      p If you prefer one-on-one styling advice and a reserved fitting room, book an appointment before you visit.
+    .text-container
+      a.tw-btn(href="#") BOOK NOW
+    .text-container
+      h3 &nbsp;
+      h3 VISIT OUR FAQS TO LEARN MORE ABOUT THE STORE
+      h3 &nbsp;
+      a(href="#") Store faqs
+      h1 &nbsp;
+      p &nbsp;

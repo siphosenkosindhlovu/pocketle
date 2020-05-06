@@ -1,0 +1,62 @@
+extends layouts/default
+block variables
+  - var title = "Pocketle Home"
+  - var page ="index"
+
+block content
+  div.
+    <div id="subscribeModal" class="modal">
+      <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content auth-form-wrapper">
+          <div class="modal-header dek-one dek-one--jp justify-content-center">
+            ポケットルの最新ニュースを受け取る
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              ×
+            </button>
+          </div>
+          <div class="modal-body auth-form">
+            <!--script src="https://app.getresponse.com/view_webform_v2.js?u=zefOG&webforms_id=Blwbm"></script-->
+            <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+              <!-- Name -->
+              <div class="form-group">
+                <label for="name_id">Name</label>
+                <input id="name_id" name="name" type="text" class="form-control" placeholder="" required />
+              </div>
+              <div class="form-group">
+                <label for="email_id">Email</label>
+                <input id="email_id" name="email" type="email" class="form-control" placeholder="" required />
+              </div>
+              <input type="hidden" name="campaign_token" value="8rjVv" />
+              <!--input type="hidden" name="thankyou_url" value="" /-->
+              <input type="hidden" name="start_day" value="0" />
+              <div class="form-group mt-5">
+                <button class="btn btn-primary btn-block" type="submit"><span>Subscribe</span></button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="maincontainer">
+      <div class="hero-container">
+        <div class="hero-bg-image-container">
+          <picture class="hero-bg-image">
+            <source srcset="assets/images/Group_2@2x.png" media="(max-width: 768px)" />
+            <img src="assets/images/Group_1.png" />
+          </picture>
+        </div>
+        <div class="hero">
+          <h1>“#{$t.pages.home.hero_main}”</h1>
+          <div class="hero__dektext">
+            !{$t.pages.home.hero_sub}
+          </div>
+          <div>
+            <a href="#" class="btn" data-toggle="modal" data-target="#subscribeModal">#{$t.pages.home.hero_cta}</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="text/javascript" src="assets/js/slick.min.js"></script>
+    <script src="assets/js/script.js"></script>

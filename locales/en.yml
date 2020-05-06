@@ -1,0 +1,84 @@
+locale: en
+pages:
+  home:
+    hero_main: '“We are creating it....”'
+    hero_sub: 'We are creating a revolutionary ecommerce that we wish we had. We will be back momentarily'
+    hero_cta: 'GET NEWs ABOUT POCKETLE'
+    newsletter:
+      header: 'Subsribe to Our News'
+  story:
+    heading: 'Our Story'
+    sub_heading: 'Pocketle was founded in 2019. <br /> And Here is how the story began.'
+    sections:
+      - heading: "The 'aha' moment"
+        content: >
+          <p>
+          It has all started from Sayuri's homework at Harvard Extention School. There is a lot of information in
+          the world, but we can't find the information that people look for as intended and Sayuri learned that it
+          is the same in the ecommerce world.
+          </p>
+          <p>
+            Sayuri started studying algorithms to find a solution, and suddenly the aha moment came to her. After
+            consulting with support organizations, the brush-up for the Pocket's business plan </ br> has begun.
+          </p>
+      - heading: 'Dream Big and Go After It!'
+        content: >
+          <p>
+          Sayuri met key persons in business as it was all planned by Gods. She wondered whether the brushed-up-idea
+          could work in business world. Sayuri found "Kyoto female entrepreneurship award" on internet and sent out
+          the application form. Later I received a notification from Kyoto Prefecture that She was certified as a
+          Kyoto Women Entrepreneur Support Project (Entrepreneur) in 2018-2019.
+          </p>
+          <p>
+            JETRO, Kyoto Sangyo 21, Astem, Kyoto City, and Kyoto Prefecture have offered to support Pocketle. In
+            February 2019, Pocketle won the very special prize of the Kyoto Prefecture Women Entrepreneurs Award - the
+            Research Park Award.
+          </p>
+  vision:
+    sub_heading: >
+      'Our mission is to create a system that we can access to a product, a service, and information that we want in
+      <em>one second</em>.'
+    heading: 'Our Vision'
+    content: >
+      <div class="about-us__item">
+      <h3 class="head">
+        We were told it's not possible. We’re glad we didn’t listen...
+      </h3>
+      <div class="deck">
+        Pocketle was born with support and love from a lot of people. At the same time, there were people who told us we
+        can't accomplish what we want. We also were crashed by others' pressure but we continued to convince to them
+        without being overwhelmed by such their words and actions. As a result? Their attitude has changed and now they
+        also support our goals.
+      </div>
+      <div class="deck">
+        We are changing that by building the world’s first and only ‘purpose search engine in the cloud’: a dream search
+        engine filled with so much hopes. Imagine the moment that you find the products, the service and the information
+        that you wanted in a secound but settled for <em>the-advertised-useless-products</em> or spent
+        <em>days-for-seeking-information</em> instead.
+      </div>
+      </div>
+      <div class="about-us__item">
+      <h3 class="head">
+        We want to expand the possibilities of people.
+      </h3>
+      <div class="deck">
+        We are asked what makes Pocketle different from other IT companies? We say that we are very different from them.
+        Because they force the possibility of IT without really thinking through what IT may impact the human liveswhile
+        pocketle's stance is that people do what they want to do. We strongly believe that it's not IT's job to take
+        away people's work, IT should create jobs to expand people's potential. We are confident that our attitude
+        toward trying to solve what people can not do with IT should be felt from our services and products...
+      </div>
+      </div>
+      <div class="about-us__item">
+      <h3 class="head">
+        We hope Pocketle can help you get closer to what you want to achieve.
+      </h3>
+      </div>
+      <div class="about-us__sign-off">
+      <div class="about-us__founder-name">
+        Sayuri Honda
+      </div>
+      <div class="about-us__company">
+        Founder, Pocketle
+      </div>
+      </div>
