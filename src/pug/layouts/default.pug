@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 block variables
-html(lang=($t.locale))
+- var locale = $t !== undefined ? $t.locale : lang
+html(lang=(locale))
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    <meta name="title" content="Pocketle | Put Your Closet in The Cloud">
+    <meta name="description" content="Imagine a closet has exactly what you want, takes up no space and does your dry cleaning. Welcome to the future – the renting revolution is here.">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta property="og:site_name" content="Pocketle" />
+    <meta property="og:type" content="website" />
+    <script src="../www.google.com/recaptcha/apib091.js?render=explicit"></script>
+    <meta property="og:image" content="https://cdn.rtrcdn.com/sites/default/files/imgs/seo_hp_closet.jpg" />
+    <meta property="og:image:width" content="" />
+    <meta property="og:image:height" content="" />
+    <meta property="og:title" content="Put Your Closet in The Cloud | Pocketle" />
+    <meta property="og:description" content="Imagine a closet has exactly what you want, takes up no space and does your dry cleaning. Welcome to the future – the renting revolution is here." />
+    <meta property="og:url" content="https://www.pocketle.com" />
+    <meta property="fb:app_id" content="142571992596" />
+    <meta property="fb:pages" content="111580660349" />
+    link(rel="alternate", hreflang="en", href="index.en.html")
+    link(rel="alternate", hreflang="jp", href="index.html")
+    link(rel="alternate" hreflang="x-default" href="index.en.html")
     <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="assets/modules/build/css/countrySelect.min.css"/>
     <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"-->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="https://unpkg.com/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
     link(rel="stylesheet", type="text/css" href="assets/main.min.css")
     title= title
   body
     input#mobile-menu(type="checkbox" style="display: none")
-    .menu-wrapper-mobile.
-      <div class="nav-menu">
-        <div class="nav-menu-item">
-          LANGUAGE:
-            <a href="#{page}.html">日本語</a>
-            <a href="#{page}.en.html">ENG</a>
-        </div>
-      </div>
+    .menu-wrapper-mobile
+      div(class="nav-menu")
+        div
+          .sub-menu.t-font-sans
+            input#lang(type="checkbox").sub-menu__dropdown-controller
+            label(for="lang",class="sub-menu__dropdown") Language
+      
+            .sub-menu__wrapper
+              a.sub-menu__link(href=(page +".html")) 日本語
+              a.sub-menu__link(href=(page +".en.html")) ENGLISH
     
-    .overlay
     .nav-header.
       <div class="nav-logo">
-      <a href="#{('index'+ ($t.locale == 'en' ? '.en' : '') +'.html')}">
+      <a href="#{('index'+ (locale == 'en' ? '.en' : '') +'.html')}">
         <div class="logo"></div>
       </a>
       </div>
       <i class="fa fa-menu"></i>
       <div class="menu-wrapper">
         <div class="nav-menu">
-          <!--
-            <a class="nav-menu-item active" href="#">Coming Soon</a>
-            <a class="nav-menu-item" href="#">Coming Soon</a>
-            <a class="nav-menu-item" href="#">Coming Soon</a>
-            <a class="nav-menu-item" href="#">Coming Soon</a>
-            <a class="nav-menu-item" href="#">Coming Soon</a>
-            <a class="nav-menu-item" href="#">Coming Soon</a>
-            <a class="nav-menu-item" href="#"><i class="fa fa-search"></i></a>-->
           <div class="nav-menu-item justify-right">
             <div class="dropdown">
               <label for="language-dropdown-1" class="dropdown-label">LANGUAGE<span
@@ -62,31 +72,91 @@ html(lang=($t.locale))
           </div>
         </nav>
       </div>
-    //- div.t-navbar(class="t-fixed t-w-full t-bg-white t-h-nav-sm")
+    //- div.t-navbar(class="t-w-full t-bg-white t-h-nav-sm md:t-h-nav-md")
     //-   nav.t-navbar_inner
-    //-     button.t-navbar_trigger(class="lg:t-hidden") &#x2630;
-    //-     a.t-navbar_logo(href=("index"+ ($t.locale == 'en' ? '.en' : '') +".html"), class="md:t-w-32")
+    //-     //-button.t-navbar_trigger(class="lg:t-hidden") &#x2630;
+    //-     a.t-navbar_logo(href=("index"+ (locale == 'en' ? '.en' : '') +".html"), class="md:t-w-32")
     //-       img(class="md:t-hidden", src="assets/images/logo app icon.png")
     //-       img(class="t-hidden md:t-block", src="assets/images/Pocketle.png")
     //-     nav.t-navbar_menu-right
     //-       a.t-ml-4(href="#") Sign In
-    //-       a.t-ml-1(href=(page + ".en.html"), class=($t.locale == 'en' && 't-border-b t-border-solid t-border-gray-700')) EN
-    //-       a.t-ml-1(href=(page + ".html"), class=($t.locale == 'jp' && 't-border-b t-border-solid t-border-gray-700')) JP
+    //-       a.t-ml-1(href=(page + ".en.html"), class=(locale == 'en' && 't-border-b t-border-solid t-border-gray-700')) EN
+    //-       a.t-ml-1(href=(page + ".html"), class=(locale == 'jp' && 't-border-b t-border-solid t-border-gray-700')) JP
     .sub-menu.t-font-sans
       input#submenu(type="checkbox").sub-menu__dropdown-controller
       label(for="submenu",class="sub-menu__dropdown") ABOUT US
  
       .sub-menu__wrapper
-        a.sub-menu__link(class=(page === "story" && "sub-menu__link--selected"), href=("plans"+ ($t.locale == 'en' ? '.en' : '') +".html")) STORY
-        a.sub-menu__link(href=("about-us"+ ($t.locale == 'en' ? '.en' : '') +".html")) VISION
-        a.sub-menu__link(href=("product"+ ($t.locale == 'en' ? '.en' : '') +".html")) PRODUCT
-        a.sub-menu__link(href=("process"+ ($t.locale == 'en' ? '.en' : '') +".html")) PROCESS
-        a.sub-menu__link(href=("careers"+ ($t.locale == 'en' ? '.en' : '') +".html")) CAREERS
-        a.sub-menu__link(href=("notes"+ ($t.locale == 'en' ? '.en' : '') +".html")) NOTES FROM
+        a.sub-menu__link(class=(page === "story" && "sub-menu__link--selected"), href=("story"+ (locale == 'en' ? '.en' : '') +".html")) STORY
+        a.sub-menu__link(class=(page === "vision" && "sub-menu__link--selected"), href=("vision"+ (locale == 'en' ? '.en' : '') +".html")) VISION
+        a.sub-menu__link(class=(page === "product" && "sub-menu__link--selected"), href=("product"+ (locale == 'en' ? '.en' : '') +".html")) PRODUCT
+        a.sub-menu__link(class=(page === "process" && "sub-menu__link--selected"), href=("process"+ (locale == 'en' ? '.en' : '') +".html")) DEVELOPMENT
+        a.sub-menu__link(class=(page === "careers" && "sub-menu__link--selected"), href=("careers"+ (locale == 'en' ? '.en' : '') +".html")) CAREERS
+        a.sub-menu__link(class=(page === "company-profile" && "sub-menu__link--selected"), href=("company-profile"+ (locale == 'en' ? '.en' : '') +".html")) COMPANY PROFILE
       
 
     block content
     block footer
-      footer.t-border-t.t-border-solid.t-border-gray-300.t-py-5.t-bg-gray-100
-        .text-container.text-center
-          | &copy; 2020 Pocketle. All Rights Reserved.
+      div(class="modal fade", id="appStoreComingSoon", tabindex="-1", role="dialog", aria-labelledby="AppStoreComingSoon", aria-hidden="true").
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+           <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Coming Soon</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+          </div>
+        </div>
+      footer.footer-wrapper
+        .footer-inner.t-container
+          .footer-content-area(style="margin-top: -.875rem; padding-top: 0;")
+            a(href="#{('index'+ (locale == 'en' ? '.en' : '') +'.html')}")
+              .logo-main
+            div.
+              <input id="country_selector" type="text" class="t-bg-transparent">   
+            br
+            ul
+              li
+                a(href=('#') , data-toggle="modal", data-target="#appStoreComingSoon")
+                  img.img-fluid.app-store-badge(src=('assets/images/google-play-badge-'+ locale + '.png'))
+              li
+                a(href=('#') , data-toggle="modal", data-target="#appStoreComingSoon")
+                  img.img-fluid.app-store-badge.app-store-badge--aapl(src=('assets/images/App_Store_Badge_'+ locale + '.svg'))
+                        
+          .footer-content-area
+            span.label.t-font-bold Company
+            ul
+              li
+                a(href=("story"+ (locale == 'en' ? '.en' : '') +".html")) Story
+              li
+                a(href=("vision"+ (locale == 'en' ? '.en' : '') +".html")) Vision
+              li
+                a(href=("product"+ (locale == 'en' ? '.en' : '') +".html")) Product
+              li
+                a(href=("process"+ (locale == 'en' ? '.en' : '') +".html")) Development
+              li
+                a(href=("careers"+ (locale == 'en' ? '.en' : '') +".html")) Careers
+              li
+                a(href=("press"+ (locale == 'en' ? '.en' : '') +".html")) Press
+              li
+                a(href=("company-profile"+ (locale == 'en' ? '.en' : '') +".html")) Company Profile
+          
+          .footer-content-area
+            span.label.t-font-bold Stores
+            ul
+              li
+                a(href=('kyotostore' + (locale == 'en' ? '.en' : '') +".html")) Kyoto Store
+
+          .footer-content-area
+            span.label.t-font-bold Questions?
+            ul
+              li
+                a(href=("help-centre"+ (locale == 'en' ? '.en' : '') +".html")) Help Centre
+            
+          
+    script(src="assets/js/jquery.min.js")
+    script(src="https://unpkg.com/popper.js")
+    script(src="assets/modules/build/js/countrySelect.min.js")
+    script(src="js/countrySelect.min.js")
+    script(src="assets/js/bootstrap.min.js")

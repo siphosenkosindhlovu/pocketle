@@ -30,10 +30,12 @@ var paths = {
 	styles: {
 		input: 'src/sass/**/*.{scss,sass}',
 		css: 'src/sass/*.css',
+		watchDir: 'src/sass/**/*',
 		output: 'dist/assets/'
 	},
 	pug: {
 		input: ['src/pug/*.pug', '!src/pug/layout/**'], //only compile top level pug files
+		noTranslate: ['src/pug/no-translate/*.pug'],
 		output: 'dist/'
 	},
 	svgs: {
@@ -44,10 +46,50 @@ var paths = {
 		input: 'src/copy/**/*',
 		output: 'dist/'
 	},
+	images: {
+		input: 'src/images/**/*',
+		output: 'dist/assets/images/'
+	},
 	reload: './dist/'
 };
 
-
+const categories = [
+	{
+		title: ['About Us', 'about'],
+		headings: ["Learn About RTR", "Your First Order", "Careers", "Rent For Brides and Bridesmaids", "Maternity", "West Elm", "Kids", "Gift Cards", "Our Online Sample Sale", "About Rental Reviews", "RTR Closet Concierge x W Hotels"]
+		, paragraphs: [4, 4, 1, 4, 4, 4, 4, 4, 4, 4]
+	},
+	{
+		title: ['Memberships', 'memberships'],
+		headings: ["Shipping and Returns", "The Basics", "About Memberships", "Extra Spots", "Account Changes"]
+		, paragraphs: [4, 4, 4, 3, 4]
+	},
+	{
+		title: ['Unlimited Swaps', 'unlimited'],
+		headings: ["Unlimited Swap Referrals", "About", "Getting Started", "Returns", "Extra Spots"]
+		, paragraphs: [4, 4, 4, 2, 3]
+	},
+	{
+		title: ['1 & 2 Swaps', 'limited'],
+		headings: ["About Update", "Returns", "Extra Spots", "Getting Started", "Fit"]
+		, paragraphs: [4, 3, 3, 2, 2]
+	},
+	{
+		title: ['One Time Rentals', 'one-time'],
+		headings: ["About ", "Style & Fit", "Receiving My Order", "Changing My Order", "Returns", "Replacements"]
+		, paragraphs: [4, 2, 4, 2, 4, 4]
+	},
+	{
+		title: ['Store and drop off', 'store'],
+		headings: ["About RTR Stores", "Return, Pick Up, & Shop", "Appointments", "About Drop-Off Boxes"]
+		, paragraphs: [4, 4, 3, 3]
+	},
+	{
+		title: ['Contact Us', 'contact'],
+		headings: ["Get in Touch"]
+		, paragraphs: [1]
+	}
+]
 /**
  * Template for banner to add to file headers
  */
@@ -82,6 +124,7 @@ var stylish = require('jshint-stylish');
 var concat = require('gulp-concat');
 var uglify = require('gulp-terser');
 var optimizejs = require('gulp-optimize-js');
+var babel = require('gulp-babel')
 
 // Styles
 var sass = require('gulp-sass');
@@ -92,7 +135,8 @@ var minify = require('cssnano');
 var tailwindcss = require('tailwindcss');
 var importCss = require('postcss-import');
 var concat = require('gulp-concat');
-var purge = require('gulp-purgecss')
+var purge = require('gulp-purgecss');
+var imagemin = require('gulp-imagemin');
 var purgecss = require('@fullhuman/postcss-purgecss')({
 
 	// Specify the paths to all of the template files in your project 
@@ -135,6 +179,9 @@ var cleanDist = function (done) {
 // Repeated JavaScript tasks
 var jsTasks = lazypipe()
 	.pipe(header, banner.main, { package: package })
+	.pipe(babel, {
+		presets: ['@babel/env']
+	})
 	.pipe(optimizejs)
 	.pipe(dest, paths.scripts.output)
 	.pipe(rename, { suffix: '.min' })
@@ -202,6 +249,14 @@ var lintScripts = function (done) {
 
 };
 
+var optimiseImages = function (done) {
+	return src(paths.images.input)
+		.pipe(imagemin({
+			verbose: true
+		}))
+		.pipe(dest(paths.images.output))
+}
+
 // Process, lint, and minify Sass files
 var buildStyles = function (done) {
 
@@ -231,7 +286,11 @@ var buildStyles = function (done) {
 		// .pipe(purge({
 		// 	content: [
 		// 		'./src/**/*.pug',
-		// 		'./src/copy/**/*.html'
+		// 		'./src/copy/**/*.html',
+		// 		'./src/pug/**/*.pug',
+		// 		'./src/pug/layout/**/*.pug',
+		// 		'./src/pug/no-translate/**/*.pug',
+		// 		'./src/js/**/*.js',
 		// 	],
 		// 	// Include any special characters you're using in this regular expression
 		// 	defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
@@ -261,7 +320,27 @@ var buildHTML = function (done) {
 				namespace: '$t',
 				filename: '{{basename}}{.{{lang}}}.html'
 			},
-			pretty: true
+			pretty: true,
+			data: {
+				help: {
+					categories
+				}
+			}
+		}))
+		.pipe(dest(paths.pug.output))
+}
+var buildHTML2 = function (done) {
+
+	if (!settings.pug) return done()
+
+	return src(paths.pug.noTranslate)
+		.pipe(pug({
+			pretty: true,
+			data: {
+				help: {
+					categories
+				}
+			}
 		}))
 		.pipe(dest(paths.pug.output))
 
@@ -323,7 +402,7 @@ var watchSource = function (done) {
 };
 
 var watchStyles = (done) => {
-	watch([paths.styles.css, paths.styles.input], series(buildStyles, reloadBrowser));
+	watch([paths.styles.watchDir, paths.styles.input], series(buildStyles, reloadBrowser));
 	done()
 }
 
@@ -338,10 +417,12 @@ exports.default = series(
 	cleanDist,
 	parallel(
 		buildScripts,
+		optimiseImages,
 		lintScripts,
 		buildStyles,
 		buildSVGs,
 		buildHTML,
+		buildHTML2,
 		copyFiles
 	)
 );
@@ -351,7 +432,8 @@ exports.develop = parallel(
 	lintScripts,
 	buildSVGs,
 	buildHTML,
-	copyFiles
+	buildHTML2,
+	copyFiles,
 );
 
 // Watch and reload

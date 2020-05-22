@@ -1,0 +1,93 @@
+.collapsible {
+  &-header {
+    @apply text-sm  flex justify-between;
+    h4 {
+      @apply overflow-x-hidden  truncate;
+    }
+  }
+  &-body {
+    display: none;
+    @apply text-sm py-4;
+  }
+  .collapsible-plus {
+    display: block;
+    color: #9c9fa8;
+    @apply px-3;
+  }
+  .collapsible-minus {
+    color: #9c9fa8;
+    @apply px-3;
+    display: none;
+  }
+  &.collapsed {
+    .collapsible-header {
+      @apply font-bold h-auto whitespace-normal;
+      h4 {
+        @apply whitespace-normal;
+      }
+    }
+    .collapsible-plus {
+      display: none;
+    }
+    .collapsible-minus {
+      display: block;
+    }
+    .collapsible-body {
+      display: block;
+    }
+  }
+}
+
+.category {
+  @apply pt-8 px-2 pb-4;
+  &-header {
+    font-size: 28px;
+    @apply font-bold pb-sm mb-2md border-tertiary border-solid border-b-4;
+  }
+  &-body {
+    @apply font-sans-alt;
+  }
+  &-item {
+    @apply py-4 mb-2;
+    &-header {
+      font-size: 14px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      @apply font-semibold mb-md;
+    }
+  }
+  &-link {
+    font-size: 14px;
+    @apply t-border-black t-border-b t-border-solid;
+  }
+}
+
+.article-item {
+  @apply border-solid border-b border-gray-300 mb-4 pb-4;
+  &-header {
+    &-wrap {
+      height: 32px;
+      @apply flex items-center justify-between;
+    }
+    font-size: 14px;
+    @apply overflow-x-hidden  truncate;
+  }
+  &-body {
+    font-size: 14px;
+  }
+}
+
+@screen sm {
+  .category {
+    padding: 45px 54px 27px;
+    &-header {
+      font-size: 32.76px;
+    }
+    &-body {
+      @apply grid grid-cols-2 gap-3;
+    }
+    &-item {
+      @apply pr-2;
+    }
+  }
+}

@@ -29,11 +29,22 @@
     }
   }
 }
-body {
-  padding-top: 105px;
-}
-@screen md {
-  body {
-    padding-top: 130px;
+
+/* .collapsible {
+  background-color: black;
+  @apply border-solid border-b border-gray-300 mb-4 pb-4;
+  &-header {
+    @apply text-sm overflow-x-hidden whitespace-no-wrap truncate flex justify-between;
   }
-}
+  &-body {
+    display: none;
+  }
+  &.collapsed {
+    .collapsible-header {
+      @apply font-bold h-auto whitespace-normal;
+    }
+    .collapsible-body {
+      display: block;
+    }
+  }
+} */

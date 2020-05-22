@@ -1,0 +1,31 @@
+extends ../layouts/default
+block variables
+  - var title = "Pocketle Home"
+  - var page ="index"
+  - var lang = "jp"
+block content
+  main.maincontainer.
+    <div id="signupModal" class="modal fade">
+      <div class="modal-dialog">
+        <script src="../app.getresponse.com/view_webform_v2bfc9.js?u=zefOG&amp;webforms_id=Blwbm"></script>
+      </div>
+    </div>
+  
+    <div class="hero-container">
+      <div class="hero-bg-image-container">
+        <picture class="hero-bg-image">
+          <source srcset="assets/images/Group_2@2x.png" media="(max-width: 768px)" />
+          <img src="assets/images/Group_1.png" />
+        </picture>
+      </div>
+      <div class="hero">
+        <h1>“準備中.”</h1>
+        <div class="hero__dektext">
+          今までと違った「こんなのが欲しかった」という<br />
+          Eコマースを準備中です。今しばらくお待ちください。
+        </div>
+        <div>
+          <a href="#" class="btn" data-toggle="modal" data-target="#signupModal">ポケットルの最新ニュースを受け取る</a>
+        </div>
+      </div>
+    </div>

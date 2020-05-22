@@ -1,0 +1,27 @@
+extends ../layouts/default
+block variables
+  - var title = "Home"
+  - var page ="index"
+  - var lang = "en"
+block content
+  main.maincontainer.
+    <div class="hero-container">
+      <div class="hero-bg-image-container">
+        <picture class="hero-bg-image">
+          <source srcset="assets/images/Group_2@2x.png" media="(max-width: 768px)" />
+          <img src="assets/images/Group_1.png" />
+        </picture>
+      </div>
+      <div class="hero">
+        <h1>“We are creating it....”</h1>
+        <div class="hero__dektext">
+          We are creating a revolutionary ecommerce that we wish we had. We
+          will be back momentarily
+        </div>
+        <div>
+          <a href="unlimited9904?act_type=home_hero_button_subscriptionheroanonmember" class="btn">GET NEWS ON
+            POCKETLE!</a>
+        </div>
+      </div>
+    </div>
+  

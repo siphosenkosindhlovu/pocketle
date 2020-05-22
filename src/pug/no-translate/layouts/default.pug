@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+block variables
+- var locale = lang
+html(lang=(locale))
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://unpkg.com/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    link(rel="stylesheet", type="text/css" href="assets/main.min.css")
+    title= title
+  body
+    input#mobile-menu(type="checkbox" style="display: none")
+    //-.menu-wrapper-mobile.
+      <div class="nav-menu">
+        <div class="nav-menu-item">
+          LANGUAGE:
+            <a href="#{page}.html">日本語</a>
+            <a href="#{page}.en.html">ENG</a>
+        </div>
+      </div>
+    
+    .overlay
+    //- .nav-header.
+    //-   <div class="nav-logo">
+    //-   <a href="#{('index'+ (locale == 'en' ? '.en' : '') +'.html')}">
+    //-     <div class="logo"></div>
+    //-   </a>
+    //-   </div>
+    //-   <i class="fa fa-menu"></i>
+    //-   <div class="menu-wrapper">
+    //-     <div class="nav-menu">
+    //-       <div class="nav-menu-item justify-right">
+    //-         <div class="dropdown">
+    //-           <label for="language-dropdown-1" class="dropdown-label">LANGUAGE<span
+    //-               class="icon icon-sm icon-chevron-down"></span></label>
+    //-           <input type="checkbox" id="language-dropdown-1" />
+    //-           <ul class="dropdown-list">
+    //-             <li><a href="#{page}.html">日本語</a></li>
+    //-             <li><a href="#{page}.en.html">ENGLISH</a></li>
+    //-           </ul>
+    //-         </div>
+    //-       </div>
+    //-     </div>
+    //-     <nav class="user-menu justify-right justify-content-between">
+    //-       <div class="menu-left">
+    //-         <label for="mobile-menu" class="user-menu-item"><i class="fa fa-bars fa-lg"></i></label>
+    //-       </div>
+    //-       <div class="menu-right">
+    //-         <a href="#" class="user-menu-item sign-in">SIGN IN</a>
+    //-       </div>
+    //-     </nav>
+    //-   </div>
+    div.t-navbar(class="t-w-full t-bg-white t-h-nav-sm md:t-h-nav-md")
+      nav.t-navbar_inner
+        //-button.t-navbar_trigger(class="lg:t-hidden") &#x2630;
+        a.t-navbar_logo(href=("index"+ (locale == 'en' ? '.en' : '') +".html"), class="md:t-w-32")
+          img(class="md:t-hidden", src="assets/images/logo app icon.png")
+          img(class="t-hidden md:t-block", src="assets/images/Pocketle.png")
+        nav.t-navbar_menu-right
+          a.t-ml-4(href="#") Sign In
+          a.t-ml-1(href=(page + ".en.html"), class=(locale == 'en' && 't-border-b t-border-solid t-border-gray-700')) EN
+          a.t-ml-1(href=(page + ".html"), class=(locale == 'jp' && 't-border-b t-border-solid t-border-gray-700')) JP
+    .sub-menu.t-font-sans
+      input#submenu(type="checkbox").sub-menu__dropdown-controller
+      label(for="submenu",class="sub-menu__dropdown") ABOUT US
+ 
+      .sub-menu__wrapper
+        a.sub-menu__link(class=(page === "plans" && "sub-menu__link--selected"), href=("plans"+ (locale == 'en' ? '.en' : '') +".html")) STORY
+        a.sub-menu__link(class=(page === "about-us" && "sub-menu__link--selected"), href=("about-us"+ (locale == 'en' ? '.en' : '') +".html")) VISION
+        a.sub-menu__link(class=(page === "product" && "sub-menu__link--selected"), href=("product"+ (locale == 'en' ? '.en' : '') +".html")) PRODUCT
+        a.sub-menu__link(class=(page === "process" && "sub-menu__link--selected"), href=("process"+ (locale == 'en' ? '.en' : '') +".html")) DEVELOPMENT
+        a.sub-menu__link(class=(page === "careers" && "sub-menu__link--selected"), href=("careers"+ (locale == 'en' ? '.en' : '') +".html")) CAREERS
+        a.sub-menu__link(class=(page === "notes" && "sub-menu__link--selected"), href=("notes"+ (locale == 'en' ? '.en' : '') +".html")) COMPANY PROFILE
+      
+
+    block content
+    block footer
+      footer.t-border-t.t-border-solid.t-border-gray-300.t-py-5.t-bg-gray-100
+        .text-container.text-center
+          | &copy; 2020 Pocketle. All Rights Reserved.

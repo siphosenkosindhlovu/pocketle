@@ -1,0 +1,8 @@
+.search-wrap {
+  @apply bg-tertiary py-2md px-sm;
+}
+@screen sm {
+  .search-wrap {
+    padding: 57px 10px;
+  }
+}

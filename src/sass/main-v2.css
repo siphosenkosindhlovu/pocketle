@@ -1,9 +1,13 @@
 @import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
 @import 'base/_typography.css';
 @import 'components/_submenu.css';
 @import 'components/_text-component.css';
 @import 'components/_navbar.css';
-
-@import 'tailwindcss/components';
+@import 'components/_collapsible.css';
+@import 'components/_search.css';
+@import 'components/_footer.css';
 
 @import 'tailwindcss/utilities';

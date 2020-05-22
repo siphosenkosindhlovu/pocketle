@@ -24,6 +24,7 @@ module.exports = {
       '8xl': '5em',
       'heading-1': '50px',
       'heading-2': '40px',
+      'heading-2-half': '36px'
     },
     extend: {
       letterSpacing: {

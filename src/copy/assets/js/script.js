@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+  //Slick Slider config
   $(".swiper-wrapper").slick({
     infinite: true,
     slidesToShow: 3,
@@ -24,6 +26,9 @@ $(document).ready(function () {
       }
     ]
   });
+
+
+
   $("svg.radial-progress").each(function (index, value) {
     $(this)
       .find($("circle.complete"))
@@ -57,74 +62,4 @@ $(document).ready(function () {
       });
     })
     .trigger("scroll");
-
-  // should start at 0
-  /*
-  var position = $(window).scrollTop();
-  window.onscroll = function() {};
-$(window).scroll(function() {
-  var scroll = $(window).scrollTop();
-  if (scroll > position) {
-    console.log("scrollDown");
-    stickNavbar();
-    hideNav();
-  } else {
-    console.log("scrollUp");
-    stickNavbar();
-    showNav();
-  }
-  position = scroll;
-});
-// Get the navbar
-var navbar = $(".sub-menu");
-//console.log(navbar);
-var sticky = navbar.offset().top;
-//console.log(sticky);
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function stickNavbar() {
-  if (window.pageYOffset >= sticky) {
-    navbar.addClass("sticky");
-  } else {
-    navbar.removeClass("sticky");
-  }
-}
-
-function showNav() {
-  var stick = $(".nav-header").offset().top + 90;
-  console.log(window.pageYOffset);
-  console.log(stick);
-  if (window.pageYOffset >= sticky) {
-    $("main").css({
-      "padding-top": "90px"
-    });
-    $(".nav-header").css({
-      position: "fixed",
-      top: 0,
-      width: "100%"
-    });
-    $(".sub-menu").css({
-      top: $(".nav-header").css("height")
-    });
-  } else {
-    hideNav();
-  }
-}
-function hideNav() {
-  var stick = $(".nav-header").offset().top;
-  console.log(window.pageYOffset);
-  console.log("stick", stick);
-  if (window.pageYOffset >= stick || window.pageYOffset == 0) {
-    $("main").css({
-      "padding-top": "0px"
-    });
-    $(".nav-header").css({
-      position: "static"
-    });
-    $(".sub-menu").css({
-      top: "0px"
-    });
-  } else {
-    //navbar.removeClass("sticky");
-  }
-}*/
 });

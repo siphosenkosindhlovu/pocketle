@@ -2,6 +2,7 @@ extends layouts/default
 block variables
   - var title = "Press"
   - var page ="press"
+  - var lang = "jp"
 block content
   div(role="banner").t-relative
     picture
@@ -15,20 +16,20 @@ block content
         figure(class="md:t-w-1/2")
           img(src="assets/images/0301_Press_VideoStill@2x.jpg" alt="Video Still").t-m-auto
         .t-p-4.t-text-center(class="md:t-w-1/2 md:t-text-left")
-          p.t-text-xl.t-pb-2sm.t-mb-sm(class="md:t-ml-2sm") “Jennifer Hyman gave ‘Nightline’ a look inside RTR’s facility in Secaucus, New Jersey, where you’ll find the world’s largest dry cleaner and rack after rack of designer clothes.”
+          h2.t-text-lg.t-pb-2sm.t-mb-sm(class="md:t-ml-2sm md:t-text-2xl") “Jennifer Hyman gave ‘Nightline’ a look inside RTR’s facility in Secaucus, New Jersey, where you’ll find the world’s largest dry cleaner and rack after rack of designer clothes.”
           p.t-tracking-default.t-text-base.t-font-semibold.t-font-sans-alt(class="md:t-ml-2sm") - NIGHTLINE
   section.t-bg-tertiary.t-py-lg
     .t-max-w-l.t-mx-auto.t-text-center(class="t-w-4/5 t-px-lg sm:t-w-auto")
       br
       h2.t-text-lg(class="md:t-text-2xl t-pb-md")
         | “Designers big and small who want to remain relevant—particularly
-    
+        br        
         | those who haven’t yet considered sustainability in their businesses—
-
+        br
         | would be wise to look into it now before they’re late to the party.”
       a(href="#",class="md:t-text-base").t-width-80.t-text-tiny.t-tracking-default.t-font-semibold.t-font-sans-alt.t-pb-md.t-underline - NIGHTLINE
   section.t-py-xl.t-text-center
-    h2(class="t-text-5/2xl md:t-text-heading-2") Highlights
+    h2(class="t-text-5/2xl md:t-text-heading-2-half") Highlights
     .t-grid(class="md:t-grid-cols-3")
       each i in [1,3,4, 6,7,8]
         .t-pt-lg
@@ -41,15 +42,15 @@ block content
       br
       h2.t-text-lg(class="md:t-text-2xl t-pb-md")
         | “Hyman’s been able to create something pretty rare: a majority-female company.
-        
+        br        
         | Women make up half of the board, 70 percent of employees, 62 percent of
-        
+        br        
         | corporate employees and an astonishing 75 percent of the executive team.
-      
+        br      
         | The company says that overall, 71 percent of employees are nonwhite.”
       a(href="#" ,class="md:t-text-base").t-width-80.t-text-tiny.t-tracking-default.t-font-semibold.t-font-sans-alt.t-pb-md.t-underline – HUFFPOST
   section.t-my-xl.t-text-center
-    h2(class="t-text-5/2xl md:t-text-heading-2") Brand Values
+    h2(class="t-text-5/2xl md:t-text-heading-2-half") Brand Values
     .t-grid(class="md:t-grid-cols-3")
       each i in [1,3]
         .t-pt-lg
@@ -71,7 +72,9 @@ block content
       br
       h2.t-text-lg(class="md:t-text-2xl t-pb-md").
         “Zara and other fast fashion retailers, watch out.
+        <br/>
         Clearly, Rent the Runway is becoming a major disruptor in the industry.
+        <br/>
         (PS—if you haven’t tried their new Unlimited service, I 10/10 recommend).”
       a(href="#" ,class="md:t-text-base").t-width-80.t-text-tiny.t-tracking-default.t-font-semibold.t-font-sans-alt.t-pb-md.t-underline – COVETEUR
   section.t-my-xl.t-text-center
@@ -98,19 +101,24 @@ block content
       br
       h2.t-text-lg(class="md:t-text-2xl t-pb-md").
         “Rent the Runway has been a go-to for all things fashion since its inception
+        <br/>
         in 2009. In case you’re unfamiliar, the company allows you to rent clothes
+        <br/>
         for an event and return it after you’ve worn it. Simple and makes sense!
+        <br/>
         Today, RTR Update is officially available, and let us tell you, it’s brilliant.”
       a(href="#" ,class="md:t-text-base").t-width-80.t-text-tiny.t-tracking-default.t-font-semibold.t-font-sans-alt.t-pb-md.t-underline – INSTYLE
   section
     .t-max-w-l.t-mx-auto.t-my-lg
-      .t-flex.t-flex-col(class="md:t-flex-row-reverse")
+      h2(class="t-text-5/2xl md:t-text-heading-2-half t-text-center") Contact Us
+      .t-flex.t-flex-col.t-pt-lg(class="md:t-flex-row-reverse")
         figure(class="md:t-w-1/2")
           img(src="assets/images/0221_Press_ContactUs@2x.jpg" alt="Video Still").t-m-auto
         .t-text-sm.t-font-sans-alt.t-p-md.t-text-center(class="md:t-w-1/2 md:t-text-left")
           p Please direct media enquiries to:
           br
           p.t-font-semibold.t-tracking-default ALISON RAPPAPORT
+          p Senior Director of Communications
           a(href="#").t-font-semibold.t-underline email@pocketle.com
           br
           br

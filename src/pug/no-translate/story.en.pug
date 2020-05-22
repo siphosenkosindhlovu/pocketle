@@ -1,0 +1,90 @@
+extends ../layouts/default
+block variables
+  - var title = "Our Story"
+  - var page ="story"
+  - var lang = "en"
+block content
+  main.maincontainer.
+    <div class="about-us our-plans">
+      <div class="about-us__header plans-header">
+        <div class="head">
+          <h1>Our Story</h1>
+          <div class="separator"></div>
+        </div>
+        <p>
+          Pocketle was founded in 2019. <br /> And Here is how the story began.
+        </p>
+      </div>
+      <div class="our-plans__start"></div>
+      <div class="our-plans__segment">
+        <div class="our-plans__image">
+          <div class="our-plans__image-container">
+            <img src="assets/images/harvardextentionschool.png" />
+          </div>
+        </div>
+
+        <div class="our-plans__text">
+          <div class="our-plans__date">2017-2018</div>
+          <div class="our-plans__image">
+            <div class="our-plans__image-container">
+              <img src="assets/images/Attachment_1554210685.jpeg" />
+            </div>
+          </div>
+          <div class="head">
+            <h2>The 'aha' moment</h2>
+          </div>
+          <div class="deck">
+            <p>
+              It has all started from Sayuri's homework at Harvard Extention School. There is a lot of information in
+              the world, but we can't find the information that people look for as intended and Sayuri learned that it
+              is the same in the ecommerce world.
+            </p>
+            <p>
+              Sayuri started studying algorithms to find a solution, and suddenly the aha moment came to her. After
+              consulting with support organizations, the brush-up for the Pocket's business plan </ br> has begun.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="our-plans__segment">
+        <div class="our-plans__image">
+          <div class="our-plans__image-container">
+            <img src="assets/images/Kyotofujoseikigyoukasho.jpeg" />
+          </div>
+        </div>
+
+        <div class="our-plans__text">
+          <div class="our-plans__date">2018-2019</div>
+          <div class="our-plans__image">
+            <div class="our-plans__image-container">
+              <img src="assets/images/shutterstock_1114626449.jpg" />
+            </div>
+          </div>
+          <div class="head">
+            <h2>Dream Big and Go After It!</h2>
+          </div>
+          <div class="deck">
+            <p>
+              Sayuri met key persons in business as it was all planned by Gods. She wondered whether the brushed-up-idea
+              could work in business world. Sayuri found "Kyoto female entrepreneurship award" on internet and sent out
+              the application form. Later I received a notification from Kyoto Prefecture that She was certified as a
+              Kyoto Women Entrepreneur Support Project (Entrepreneur) in 2018-2019.
+            </p>
+            <p>
+              JETRO, Kyoto Sangyo 21, Astem, Kyoto City, and Kyoto Prefecture have offered to support Pocketle. In
+              February 2019, Pocketle won the very special prize of the Kyoto Prefecture Women Entrepreneurs Award - the
+              Research Park Award.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="our-plans__end"></div>
+    <div id="infinite-loading" class="t-text-center t-hidden">Loading...</div>
+    <div id="infinite-error" class="t-text-center t-hidden">An error occured <a href="#" id="retry"
+        class="t-underline t-font-bold">Retry?</a></div>
+    <br />
+    <br />
+    <br />
+  
+  script(src="js/stories.js")

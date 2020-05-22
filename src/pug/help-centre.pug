@@ -1,0 +1,90 @@
+extends layouts/help
+block variables
+  - var title = "Help Center"
+  - var page ="help-centre"
+block content
+  .search-wrap
+    h1.t-font-bold.t-text-center.t-mb-3md(class="t-text-7/2xl") FAQs
+    form.t-border-black.t-border-solid.t-border.t-flex.t-items-center.t-bg-white.t-m-auto(style="max-width: 800px")
+      input.t-w-full.t-pl-4.t-py-2sm.t-font-sans-alt(placeholder="Search by keyword")
+      img(src="assets/images/SearchIcon.png", style="height: 27px", class="t-mr-5")
+  .sub-menu.t-font-sans.t-sticky
+    input#submenu(type="checkbox").sub-menu__dropdown-controller
+    label(for="submenu", class="sub-menu__dropdown") ABOUT US
+    .sub-menu__wrapper
+      a.sub-menu__link(class="sub-menu__link--selected",href="#about") ABOUT US
+      a.sub-menu__link(href="#memberships") MEMBERSHIPS
+      a.sub-menu__link(href="#unlimited") UNLIMITED SWAPS
+      a.sub-menu__link(href="#limited") 1 &AMP; 2 SWAPS
+      a.sub-menu__link(href="#one-time") ONE TIME RENTALS
+      a.sub-menu__link(href="#store") STORE &AMP; DROP-OFF
+      a.sub-menu__link(href="#contact") CONTACT US
+  //- each category in [['About Us', 'about'], ['Memberships', 'memberships'], ['Unlimited Swaps', 'unlimited'], ['1 & 2 Swaps', 'limited'], ['One Time Rentals', 'one-time'], ['Store and drop off', 'store'], ['Contact Us', 'contact']]
+  each category, index_parent in help.categories
+    .category
+      h2.category-header(id=(category.title[1])) #{category.title[0]}
+      .category-body
+        each heading, index in category.headings
+          if index === 0 && index_parent === 0
+            .category-item
+              h3.category-item-header LEARN ABOUT POCKETLE
+              div.t-pt-sm
+                .collapsible.article-item
+                  .collapsible-header.article-item-header-wrap
+                    h4.article-item-header How are garments cleaned, including to prevent the spread of viruses such as COVID-19?
+                    button.t-bg-white.collapsible-plus
+                      i.fa.fa-plus
+                    button.t-bg-white.collapsible-minus
+                      i.fa.fa-minus
+                  .collapsible-body.article-item-body
+                    p(style="line-height: 1.2;margin-left: 36pt;margin-top: 0pt;margin-bottom: 0pt;text-align: justify;") 
+                      span(style="font-size: 10pt;font-family: 'Proxima Nova',sans-serif; color: #000000;background-color: transparent;font-weight: 400;font-style: normal;font-variant: normal;text-decoration: none;vertical-align: baseline;white-space: pre;white-space: pre-wrap;") Assertively whiteboard virtual results via future-proof deliverables. Progressively expedite synergistic methods of empowerment whereas cooperative expertise. Uniquely myocardinate enterprise-wide e-markets for standardized channels. Assertively simplify just.
+                    p(style="line-height: 1.2;margin-left: 36pt;margin-top: 0pt;margin-bottom: 0pt;text-align: justify;")
+                      br
+                    p(style="line-height: 1.2;margin-left: 36pt;margin-top: 0pt;margin-bottom: 0pt;text-align: justify;") 
+                      span(style="font-size: 10pt;font-family: 'Proxima Nova',sans-serif; color: #000000;background-color: transparent;font-weight: 400;font-style: normal;font-variant: normal;text-decoration: none;vertical-align: baseline;white-space: pre;white-space: pre-wrap;") Assertively whiteboard virtual results via future-proof deliverables. Progressively expedite synergistic methods of empowerment whereas cooperative expertise. Uniquely myocardinate enterprise-wide e-markets for standardized channels. Assertively simplify just.
+                    p(style="line-height: 1.2;margin-left: 36pt;margin-top: 0pt;margin-bottom: 0pt;text-align: justify;")
+                      br
+                    p(style="line-height: 1.2;margin-left: 36pt;margin-top: 0pt;margin-bottom: 0pt;text-align: justify;") 
+                      span(style="font-size: 10pt;font-family: 'Proxima Nova',sans-serif; color: #000000;background-color: transparent;font-weight: 400;font-style: normal;font-variant: normal;text-decoration: none;vertical-align: baseline;white-space: pre;white-space: pre-wrap;") Assertively whiteboard virtual results via future-proof deliverables. Progressively expedite synergistic methods of empowerment whereas cooperative expertise. Uniquely myocardinate enterprise-wide e-markets for standardized channels. Assertively simplify just.
+                    p(style="line-height: 1.2;margin-left: 36pt;margin-top: 0pt;margin-bottom: 0pt;text-align: justify;")
+                      br
+                    <p dir="ltr" style="line-height: 1.2; margin-left: 36pt; margin-top: 0pt; margin-bottom: 0pt; text-align: justify;"><span style="font-size:10pt;font-family:'Proxima Nova',sans-serif;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"><a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" style="text-decoration:none;"><span style="font-size:10pt;font-family:'Proxima Nova',sans-serif;color:#1155cc;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">Read more here</span></a><span style="font-size:10pt;font-family:'Proxima Nova',sans-serif;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;">. </span></span></p>
+                .collapsible.article-item
+                  .collapsible-header.article-item-header-wrap
+                    h4.article-item-header How are garments cleaned, including to prevent the spread of viruses such as COVID-19?
+                    button.t-bg-white.collapsible-plus
+                      i.fa.fa-plus
+                    button.t-bg-white.collapsible-minus
+                      i.fa.fa-minus
+                  .collapsible-body.article-item-body
+                    p Assertively whiteboard virtual results via future-proof deliverables. Progressively expedite synergistic methods of empowerment whereas cooperative expertise. Uniquely myocardinate enterprise-wide e-markets for standardized channels. Assertively simplify just.
+                .collapsible.article-item
+                  .collapsible-header.article-item-header-wrap
+                    h4.article-item-header How are garments cleaned, including to prevent the spread of viruses such as COVID-19?
+                    button.t-bg-white.collapsible-plus
+                      i.fa.fa-plus
+                    button.t-bg-white.collapsible-minus
+                      i.fa.fa-minus
+                  .collapsible-body.article-item-body
+                    p Assertively whiteboard virtual results via future-proof deliverables. Progressively expedite synergistic methods of empowerment whereas cooperative expertise. Uniquely myocardinate enterprise-wide e-markets for standardized channels. Assertively simplify just.
+              a(href="#").category-link View More
+          else
+            .category-item
+              h3.category-item-header= heading
+              div.t-pt-sm
+                - var i = 0
+                while i < category.paragraphs[index]
+                  - i++
+                  .collapsible.article-item
+                    .collapsible-header.article-item-header-wrap
+                      h4.article-item-header How are garments cleaned, including to prevent the spread of viruses such as COVID-19?
+                      button.t-bg-white.collapsible-plus
+                        i.fa.fa-plus
+                      button.t-bg-white.collapsible-minus
+                        i.fa.fa-minus
+                    .collapsible-body.article-item-body
+                      p Assertively whiteboard virtual results via future-proof deliverables. Progressively expedite synergistic methods of empowerment whereas cooperative expertise. Uniquely myocardinate enterprise-wide e-markets for standardized channels. Assertively simplify just.
+              a(href="#").category-link View More
+    
+  script(src='js/collapsible.js')

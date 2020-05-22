@@ -10,6 +10,7 @@
 .sub-menu {
   width: 100%;
   height: 50px;
+  top: 0px;
   background-color: #faf9f7;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -18,8 +19,7 @@
   color: #333333;
   letter-spacing: 2px;
   transition: all 0.3s;
-  position: fixed;
-  top: 90px;
+  position: sticky;
   width: 100%;
   z-index: 6;
   &__dropdown {
@@ -55,6 +55,7 @@
   .sub-menu {
     height: auto;
     font-size: 15px;
+    top: 0px;
     &__dropdown {
       display: flex;
       &:before {
@@ -92,6 +93,5 @@
 
 @media screen and (max-width: 574px) {
   .sub-menu {
-    top: 65px;
   }
 }

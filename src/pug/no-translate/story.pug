@@ -1,0 +1,87 @@
+extends ../layouts/default
+block variables
+  - var title = "Our Story"
+  - var page ="story"
+  - var lang = "jp"
+block content
+  main.maincontainer.
+    <div class="about-us our-plans">
+      <div class="about-us__header plans-header">
+        <div class="head">
+          <h1>ポケットルのSTORY</h1>
+          <div class="separator"></div>
+        </div>
+        <p>
+          ポケットルは2019年に設立されました。</br>そして物語はこうして始まったのです。
+        </p>
+      </div>
+      <div class="our-plans__start"></div>
+      <div class="our-plans__segment">
+        <div class="our-plans__image">
+          <div class="our-plans__image-container">
+            <img src="assets/images/harvardextentionschool.png" />
+          </div>
+        </div>
+
+        <div class="our-plans__text">
+          <div class="our-plans__date">2017-2018</div>
+          <div class="our-plans__image">
+            <div class="our-plans__image-container">
+              <img src="assets/images/harvardextentionschool.png" />
+            </div>
+          </div>
+          <div class="head">
+            <h2>きっかけと気づきの瞬間</h2>
+          </div>
+          <div class="deck">
+            <p>
+              きっかけは創業者のHarvard Extension Schoolの宿題でした。</p>
+            世の中に情報は溢れているのに、今のITでは人が意図として探している</br>情報を容易に探すことができず、それはECの世界でも一緒だという事が</br>判明したのです。
+            </p>
+            <br />
+            <p>
+              解決方法を探すのにアルゴリズムの勉強を始めて、ある時ぱっと答えが</br>
+              浮かんできました。支援機関に相談し、ポケットルの事業計画のブラッ</br>シュアップが始まりました。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="our-plans__segment">
+        <div class="our-plans__image">
+          <div class="our-plans__image-container">
+            <img src="assets/images/Kyotofujoseikigyoukasho.jpeg" />
+          </div>
+        </div>
+
+        <div class="our-plans__text">
+          <div class="our-plans__date">2018</div>
+          <div class="our-plans__image">
+            <div class="our-plans__image-container">
+              <img src="assets/images/shutterstock_1114626449.jpg" />
+            </div>
+          </div>
+          <div class="head">
+            <h2>夢は大きく、そして手に入れる！</h2>
+          </div>
+          <div class="deck">
+            <p>
+              まるで大きな力に流されるかのように、事業に必要な人に出会うようになりました。創業者はこのブラッシュアップされたアイディアがプロの世界で通用するものなのか試すべきではないかと考えました。
+              ネット上で京都女性起業家賞を見つけて応募用紙を送ったところ、京都府から平成30年度京都女性起業家支援事業（アントレプレナー）に認定されたというお知らせを受けました。
+            </p>
+            <p>
+              JETROさんを始め、京都産業21、アステム、京都市、京都府が支援をしてくださるようになりました。そして2019年の2月には京都府女性起業家賞のリサーチパーク賞という特別賞でも上位の賞に入賞することができました。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="our-plans__end"></div>
+    <div id="infinite-loading" class="t-text-center t-hidden">Loading...</div>
+    <div id="infinite-error" class="t-text-center t-hidden">An error occured <a href="#" id="retry"
+        class="t-underline t-font-bold">Retry?</a></div>
+    <br />
+    <br />
+    <br />
+  
+ 
+  script(src="js/stories.js")

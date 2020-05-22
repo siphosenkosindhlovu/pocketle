@@ -9,8 +9,8 @@
   color: #333333;
   letter-spacing: 2px;
   transition: all 0.3s;
-  position: fixed;
-  top: 90px;
+  position: sticky;
+  top: 0px;
   width: 100%;
   z-index: 6;
   &__dropdown {
@@ -43,7 +43,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .sub-menu {
     height: auto;
     font-size: 15px;
@@ -79,11 +79,5 @@
         background: #f4ede5;
       }
     }
-  }
-}
-
-@media screen and (max-width: 574px) {
-  .sub-menu {
-    top: 65px;
   }
 }
